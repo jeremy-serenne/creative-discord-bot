@@ -6,7 +6,7 @@ from replit import db
 
 @tasks.loop(hours=24)
 async def msg1(client, daily_channel_id: int) -> None:
-  await client.get_channel(daily_channel_id).send("Daily: "+get_daily_ideation())
+  await client.get_channel(daily_channel_id).send("@everyone\nDaily: "+get_daily_ideation())
 
 @msg1.before_loop
 async def before_msg1() -> None:
